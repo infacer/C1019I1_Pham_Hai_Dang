@@ -5,23 +5,35 @@
     <title>PhamHaiDang</title>
 </head>
 <body>
-<p id="convert"></p>
+<p id="ketqua"></p>
 <from>
     Amouts
-    <input id="inputAmouts">
+    <input id="inputMoney">
     From Currency :
-    <select>
-        <option value="USD">USD</option>
-        <option value="VietNam">VietNam</option>
+    <select id="fromType">
+        <option value="1">USD</option>
+        <option value="2">VietNam</option>
     </select>
     To Currency :
-    <select>
-        <option value="VietNam">VietNam</option>
-        <option value="USD">USD</option>
+    <select id="toType">
+        <option value="2">VietNam</option>
+        <option value="1">USD</option>
     </select>
-    <button type="submit" onclick="convert">Convert</button>
+    <button onclick="hienthi();return false;">Convert</button>
 </from>
-    <script>
-    </script>
+<script>
+    function hienthi() {
+        var money = document.getElementById("inputMoney").value;
+        var from = document.getElementById("fromType");
+        var to = document.getElementById("toType");
+        var ketqua = document.getElementById("ketqua");
+        if (from.value == 1 && to.value == 2) {
+            ketqua.innerText = money * 23000;
+        }
+        if (from.value == 2 && to.value == 1) {
+            ketqua.innerText = money / 23000;
+        }
+    }
+</script>
 </body>
 </html>

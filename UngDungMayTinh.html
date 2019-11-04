@@ -5,15 +5,33 @@
     <title>PhamHaiDang</title>
 </head>
 <body>
+<h1>Calculator</h1>
+<p id="ketqua"></p>
 <form>
     <input id="inputX">
     <input id="inputY">
-    <h1><button type="submit" onclick="Addition">Addition(+)</button>
-        <button type="submit" onclick="Subtraction">Subtraction(-)</button>
-        <button type="submit" onclick="Multiplication">Multiplication(X)</button>
-        <button type="submit" onclick="Division">Division(/)</button></h1>
+    <h1><button onclick="Addition();return false;">Addition(+)</button>
+        <button onclick="Subtraction();return false;">Subtraction(-)</button>
+        <button onclick="Multiplication();return false;">Multiplication(X)</button>
+        <button onclick="Division();return false;">Division(/)</button></h1>
 </form>
     <script>
-    </script>
+        let x = document.getElementById("inputX");
+        let y = document.getElementById("inputY");
+        function Division(){
+        document.getElementById("ketqua").innerHTML = x.value / y.value;
+    }
+        function Subtraction(){
+        document.getElementById("ketqua").innerHTML = x.value - y.value;
+    }
+        function Multiplication(){
+        document.getElementById("ketqua").innerHTML = x.value * y.value;
+    }
+        function Addition(){
+        let soX = parseInt(x.value);
+        let soY = parseInt(y.value);
+        document.getElementById("ketqua").innerHTML = soX + soY;
+    }
+</script>
 </body>
 </html>
