@@ -5,14 +5,14 @@
     <title>Title</title>
 </head>
 <body>
-    Nhập Tháng : <input id="month">
-    <button onclick="day();return false;">Day</button>
-    <p id="ketQua"></p>
+Nhập Tháng : <input id="thang">
+<button onclick="doiSongay();return false;">Day</button>
+<p id="ketQua"></p>
 <script>
-    function day() {
-        var moNth = parseInt(document.getElementById(month).value);
-        var days
-        switch (moNth) {
+    function doiSongay() {
+        var soNgay = parseInt(document.getElementById("thang").value);
+        var ketQua = document.getElementById("ketQua");
+        switch (soNgay) {
             case 1:
             case 3:
             case 5:
@@ -20,14 +20,14 @@
             case 8:
             case 10:
             case 12:
-               days = "Có 31 ngày";
+                ketQua.innerText = "Có 31 ngày";
                 break;
             case 2 :
-                days = "Có 28 hoặc 29 ngày";
+                ketQua.innerText = "Có 28 or 29 ngày";
                 break;
             default:
-                days = "Có 30 ngày";
-        } ketQua.innerText = days;
+                ketQua.innerText = "Có 31 ngày";
+        }
     }
 </script>
 </body>
