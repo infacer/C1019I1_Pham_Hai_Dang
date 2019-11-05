@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let weight = prompt("inputWeight:");
+    let height = prompt("inputHeight:");
+    let bMi = weight / (height * height);
+    alert(bMi);
+    if (bMi < 18) {
+        document.write("Underweight");
+    } else if (bMi < 25.0) {
+        document.write("Normal");
+    } else if (bMi < 30.0) {
+        document.write("Overweight");
+    } else {
+    }
+</script>
+</body>
+</html>
