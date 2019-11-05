@@ -6,11 +6,13 @@
 </head>
 <body>
     Nhập Tháng : <input id="month">
-    <button onclick="day()">Day</button>
+    <button onclick="day();return false;">Day</button>
+    <p id="ketQua"></p>
 <script>
     function day() {
-        var thang = parseInt(document.getElementById(month).value);
-        switch (thang) {
+        var moNth = parseInt(document.getElementById(month).value);
+        var days
+        switch (moNth) {
             case 1:
             case 3:
             case 5:
@@ -18,14 +20,14 @@
             case 8:
             case 10:
             case 12:
-               alert("Có 31 ngày");
+               days = "Có 31 ngày";
                 break;
             case 2 :
-                alert("Có 28 hoặc 29 ngày");
+                days = "Có 28 hoặc 29 ngày";
                 break;
             default:
-                alert("Có 30 ngày");
-        }
+                days = "Có 30 ngày";
+        } ketQua.innerText = days;
     }
 </script>
 </body>
