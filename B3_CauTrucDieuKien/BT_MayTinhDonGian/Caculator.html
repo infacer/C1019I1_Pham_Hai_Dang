@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="disPlay"/><br>
+<input type="button" value="1" onclick="push(this.value);">
+<input type="button" value="2" onclick="push(this.value);">
+<input type="button" value="3" onclick="push(this.value);">
+<input type="button" value="+" onclick="push(this.value);"><br>
+<input type="button" value="4" onclick="push(this.value);">
+<input type="button" value="5" onclick="push(this.value);">
+<input type="button" value="5" onclick="push(this.value);">
+<input type="button" value="-" onclick="push(this.value);"><br>
+<input type="button" value="7" onclick="push(this.value);">
+<input type="button" value="8" onclick="push(this.value);">
+<input type="button" value="9" onclick="push(this.value);">
+<input type="button" value="x" onclick="push(this.value);"><br>
+<input type="button" value="C" onclick="del()">
+<input type="button" value="0" onclick="push(this.value);">
+<input type="button" value="=" onclick="ketQua()">
+<input type="button" value="/" onclick="push(this.value);">
+<script>
+    var disPlay = document.getElementById("disPlay");
+
+    function push(val) {
+        disPlay.value += val;
+    }
+
+    function ketQua() {
+        disPlay.value = eval(disPlay.value);
+    }
+
+    function del() {
+        disPlay.value = "";
+    }
+</script>
+</body>
+</html>

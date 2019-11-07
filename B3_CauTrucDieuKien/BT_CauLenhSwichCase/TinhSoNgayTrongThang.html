@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+Nhập Tháng : <input id="thang">
+<button onclick="doiSongay();return false;">Day</button>
+<p id="ketQua"></p>
+<script>
+    function doiSongay() {
+        var soNgay = parseInt(document.getElementById("thang").value);
+        var ketQua = document.getElementById("ketQua");
+        switch (soNgay) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                ketQua.innerText = "Có 31 ngày";
+                break;
+            case 2 :
+                ketQua.innerText = "Có 28 or 29 ngày";
+                break;
+            default:
+                ketQua.innerText = "Có 30 ngày";
+        }
+    }
+</script>
+</body>
+</html>
