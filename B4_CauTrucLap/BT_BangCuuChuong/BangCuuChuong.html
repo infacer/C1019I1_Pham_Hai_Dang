@@ -5,15 +5,27 @@
     <title>Title</title>
 </head>
 <body>
-<p id="ketQua"></p>
+<table>
+    <!--CMT-->
+    <!--  <tr>
+     Tạo ô thì dùng td -->
+    <!--<td>a</td>-->
+    <!--       <td>b</td>-->
+    <!--       <td>c</td>-->
+    <!--</tr> -->
+</table>
 <script>
-    let cuuChuong = document.getElementById("ketQua");
+    var ketqua;
+    ketqua = "<table border='1px'>"
     for (var i = 1; i <= 9; i++) {
-        for (var j = 1; j <= 9; j++) {
-
+        ketqua += "<tr>";
+        for (var j = 2; j <= 9; j++) {
+            ketqua += "<td>" + i + "x" + j + "=" + (i * j) + "</td>";
         }
+        ketqua += "</tr>";
     }
-
+    ketqua += "</table>";
+    document.write(ketqua);
 </script>
 </body>
 </html>
