@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    Nhập Test :<br>
+    <input type="text" id="hienThi">
+    <input type='button' value='Fix' onclick= 'chuyendoi()'>
+</form>
+<p id="ketQua"></p>
+<script>
+    var str = document.getElementById("hienThi");
+    var upPer = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    var loWer = 'abcdefghijklmnopqrstuvwxyz';
+    var result = [];
+    function chuyendoi() {
+        for (var x = 0; x < str.value.length; x++) {
+            if (upPer.indexOf(str.value[x]) !== -1) {
+                result.push(str.value[x].toLowerCase());
+            } else if (loWer.indexOf(str.value[x]) !== -1) {
+                result.push(str.value[x].toUpperCase());
+            } else {
+                result.push(str.value[x]);
+            }
+        }
+        document.getElementById("ketQua").innerText = result.join('');
+    }
+
+</script>
+</body>
+</html>
