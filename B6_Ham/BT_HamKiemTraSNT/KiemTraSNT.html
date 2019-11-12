@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function isSoNguyenTo(so) {
+        for (var i = 2; i < so; i++) {
+            if (so % i === 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    function hienThiMSoNguyenTo(m) {
+        var cout = 0;
+        var i = 2;
+        while (cout < m) {
+            if (isSoNguyenTo(i)) {
+                document.write(i + " ");
+                cout++;
+            }
+            i++;
+        }
+    }
+    var input = parseInt(prompt(" Nhập 1 Số :"));
+    hienThiMSoNguyenTo(input);
+</script>
+</body>
+</html>

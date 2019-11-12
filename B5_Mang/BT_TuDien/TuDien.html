@@ -6,28 +6,27 @@
 </head>
 <body>
 <form>
-    Nhap Tu Can Tim Kiem: <br>
+    Nhập Từ Cần Tìm: <br>
     <input id="EnterTheWord">
-    <input type='button' value='Look Word' onclick='lookWord()'>
+    <input type='button' value='Look Word' onclick='Translate()'>
+    <p id="result"></p>
 </form>
 <script>
-    let arrVie = ["a", "b", "c", "d", "e", "g", "h", "i", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "x", "y"];
-    let arrEng = ["a", "b", "c", "d", "e", "g", "h", "i", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "x", "y", "f", "w", "z"];
+    let arrVie = ["Xin Chào", "Chào Buổi Sáng", "Chào Buổi Chiều", "Chào Buổi Tối", "Chúc Ngủ Ngon"];
+    let arrEng = ["Hello", "Good Morning", "Good Afternoon", "Good Evening", "Good Night"];
 
-    function lookWord() {
+    function Translate() {
         let key = document.getElementById("EnterTheWord");
-        for (let i = 0; i < arrEng.length; i++) {
-            if (key.value === arrEng[i]) {
-                for (let j = 0; j < arrVie.length; j++) {
-                    if (arrVie[j] === key.value) {
-                        document.write(arrVie[j]);
-                        return true;
-                    } else {
-                        document.write("Khong tim thay!!");
-                        return false;
-                    }
-                }
-            }
+        let indexVie = arrVie.indexOf(key.value);
+        let indexEng = arrEng.indexOf(key.value);
+        let result = document.getElementById("result");
+        if (indexEng != -1) {
+            result.innerText = arrVie[indexEng];
+        }
+        if (indexVie!= -1) {
+            result.innerText = arrEng[indexVie];
+        } else {
+            alert("Không Tìm Thấy");
         }
     }
 </script>

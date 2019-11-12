@@ -17,7 +17,6 @@
     let typeRoom = "Business";
     let rentDays = 10;
     let typeService = "Villa";
-    let totalPays = 500 * rentDays * (1 - discount / 100);
     let choose = prompt(
         "1. Show Information Customer.\n" +
         "2. Edit Information Customer.\n" +
@@ -69,7 +68,7 @@
                     emailCustomer = prompt(" Enter Email You Want Edit");
                     break;
                 case "5" :
-                   addressCustomer = prompt(" Enter Address You Want Edit");
+                    addressCustomer = prompt(" Enter Address You Want Edit");
                     break;
                 case "6" :
                     typeCustomer = prompt(" Enter Type Customer You Want Edit");
@@ -107,6 +106,58 @@
                 "\nRent Days : " + rentDays +
                 "\nType Sirvice : " + typeService
             );
+            break;
+        case "3" :
+            let moneyOftypeService= 0;
+            if (typeService === "Villa") {
+                moneyOftypeService = 500;
+            } else if (typeService === "House") {
+                moneyOftypeService = 300;
+            } else {
+                moneyOftypeService = 100;
+            }
+            let conditionalDiscount = 0;
+            let currentYear = new Date().getFullYear();
+            let birthday = new Date(birthdayCustomer).getFullYear();
+            let ageCustomer = currentYear - birthday;
+            if (addressCustomer === "Đà Nẵng") {
+                conditionalDiscount += 20;
+                if (ageCustomer > 30) {
+                    conditionalDiscount += 2;
+                } else if (ageCustomer >= 20) {
+                    conditionalDiscount += 1;
+                }
+            } else if (addressCustomer === "Huế") {
+                conditionalDiscount += 10;
+            } else if (addressCustomer === "Quảng Nam") {
+                conditionalDiscount += 5;
+            }
+            if (rentDays > 7) {
+                conditionalDiscount += 30;
+            } else if (5 <= rentDays) {
+                conditionalDiscount += 20;
+            } else if (2 <= rentDays) {
+                conditionalDiscount += 10;
+            }
+            if (typeCustomer === "Diamond") {
+                conditionalDiscount += 15;
+            } else if (typeCustomer === "Platium") {
+                conditionalDiscount += 10;
+            } else if (typeCustomer === "Gold") {
+                conditionalDiscount += 5;
+            } else if (typeCustomer === "Silver") {
+                conditionalDiscount += 2;
+            } else {
+                conditionalDiscount += 0;
+            }
+            let totalPays = moneyOftypeService * rentDays * (1 - discount/100);
+            totalPays = totalPays - conditionalDiscount;
+            alert("Total Pays After Conditional Discount : " + totalPays);
+            break;
+        default:
+            alert("Failed!!!!!!");
+            break;
+
     }
 
 </script>
