@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FuramaResort</title>
+</head>
+<body>
+<script>
+    let checkValidate = false;
+    let nameCustomer = prompt("Enter Name Customer: ");
+    let fixName = "";
+    let idCard;
+    let birthdayCustomer;
+    let emailCustomer;
+    let addressCustomer = prompt("Enter Address Customer: ");
+    let fixAddress = "";
+    let typeCustomer = prompt("Enter Type Customer: ");
+    let fixTypecustomer = "";
+    let discount;
+    let numberOfAccompanying;
+    let typeRoom = prompt("Enter Type Room: ");
+    let fixTyperoom = "";
+    let rentDays;
+    let typeService = prompt("Enter Type Service: ");
+    let fixTypeservice = "";
+
+
+    nameCustomer = nameCustomer.trim().toLocaleLowerCase();
+    for (let i = 0; i < nameCustomer.length; i++) {
+        if (nameCustomer.charAt(i) === " " && nameCustomer.charAt(i + 1) === " ") {
+            continue;
+        }
+        if (i === 0 || nameCustomer.charAt(i - 1) === " ") {
+            fixName += nameCustomer.charAt(i).toLocaleUpperCase();
+            continue;
+        }
+        fixName += nameCustomer.charAt(i);
+    }
+    nameCustomer = fixName;
+    // fix Name Customer
+
+
+    do {
+        checkValidate = false;
+        idCard = prompt("Enter ID Card Customer: ");
+        if (isNaN(idCard)) {
+        }
+        idCard = Number.parseFloat(idCard);
+        if (!Number.isInteger(idCard)) {
+        }
+        if (idCard >= 100000000 && idCard <= 999999999) {
+            checkValidate = true;
+        } else {
+            alert(" ID Card Is Valid !!!! Please Try Again ");
+        }
+    } while (!checkValidate);
+    // fix ID Card
+
+    do {
+        checkValidate = false;
+        birthdayCustomer = prompt("Enter Birthday Customer (dd/MM/YYYY): ");
+        if (birthdayCustomer.charAt(2) !== "/" || birthdayCustomer.charAt(5) !== "/") {
+            alert(" Birthday is Invalid !!! Please Try Again !!!");
+            continue;
+        }
+        let dayOfdays = birthdayCustomer.substring(0,2);
+        let monthOfmonths = birthdayCustomer.substring(3,5);
+        let yearOfyears = birthdayCustomer.substring(6,10);
+        if (!isNaN(dayOfdays) && !isNaN(monthOfmonths) && !isNaN(yearOfyears)) {
+            dayOfdays = Number.parseFloat(dayOfdays);
+            monthOfmonths = Number.parseFloat(monthOfmonths);
+            yearOfyears = Number.parseFloat(yearOfyears);
+            if (Number.isInteger(dayOfdays) && Number.isInteger(monthOfmonths) && Number.isInteger(yearOfyears)) {
+                if (dayOfdays > 0 && dayOfdays < 32 && monthOfmonths < 13 && monthOfmonths > 0 && yearOfyears >= 1920 && yearOfyears <= 2019) {
+                    checkValidate = true;
+                }
+            }
+        }
+        if (!checkValidate) {
+            alert(" Birthday is Invalid !!! Please Try Again !!!");
+        }
+    } while (!checkValidate);
+    // fix Birthday
+
+    do {
+        checkValidate = true;
+        emailCustomer = prompt("Enter Email Customer: ");
+        let countDoc = 0;
+        let countAt = 0;
+        for (let i = 0; i < emailCustomer.length; i++) {
+            if (emailCustomer.charAt(i) === "@") {
+                countAt++;
+            }
+            if (emailCustomer.charAt(i) === ".") {
+                countDoc++;
+            }
+        }
+        if (countAt !== 1 || countDoc < 1) {
+            checkValidate = false;
+            alert(" Email is Invalid !!!! Please Try Again !!!");
+        }
+    } while (!checkValidate);
+    // fix Email
+
+    addressCustomer = addressCustomer.trim().toLocaleLowerCase();
+    for (let i = 0; i < addressCustomer.length; i++) {
+        if (addressCustomer.charAt(i) === " " && addressCustomer.charAt(i + 1) === " ") {
+            continue;
+        }
+        if (i === 0 || addressCustomer.charAt(i - 1) === " ") {
+            fixAddress += addressCustomer.charAt(i).toLocaleUpperCase();
+            continue;
+        }
+        fixAddress += addressCustomer.charAt(i);
+    }
+    addressCustomer = fixAddress;
+    // fix Address Of Customer
+
+    typeCustomer = typeCustomer.trim().toLocaleLowerCase();
+    for (let i = 0; i < typeCustomer.length; i++) {
+        if (typeCustomer.charAt(i) === " " && typeCustomer.charAt(i + 1) === " ") {
+            continue;
+        }
+        if (i === 0 || typeCustomer.charAt(i - 1) === " ") {
+            fixTypecustomer += typeCustomer.charAt(i).toLocaleUpperCase();
+            continue;
+        }
+        fixTypecustomer += typeCustomer.charAt(i);
+    }
+    typeCustomer = fixTypecustomer;
+    // fix Type Customer
+
+
+    do {
+        checkValidate = false;
+        discount = prompt("Enter Discount: ");
+        if (!isNaN(discount)) {
+            discount = Number.parseFloat(discount);
+            if (discount > 0) {
+                checkValidate = true;
+            }
+        }
+        if (!checkValidate) {
+            alert(" Discount Is Valid !!!! Please Try Again");
+        }
+    } while (!checkValidate);
+    // fix Discount
+
+    do {
+        checkValidate = false;
+        numberOfAccompanying = prompt("Enter Number Of Accompanying: ");
+        if (!isNaN(numberOfAccompanying)) {
+            numberOfAccompanying = Number.parseFloat(numberOfAccompanying);
+            if (numberOfAccompanying >= 0 && Number.isInteger(numberOfAccompanying)) {
+                checkValidate = true;
+            }
+        }
+        if (!checkValidate) {
+            alert("Number Of Accompanying Is valid !!! Please Try Again");
+        }
+
+    } while (!checkValidate);
+    // fix Accompanying
+
+    typeRoom = typeRoom.trim().toLocaleLowerCase();
+    for (let i = 0; i < typeRoom.length; i++) {
+        if (typeRoom.charAt(i) === " " && typeRoom.charAt(i + 1) === " ") {
+            continue;
+        }
+        if (i === 0 || typeRoom.charAt(i - 1) === " ") {
+            fixTyperoom += typeRoom.charAt(i).toLocaleUpperCase();
+            continue;
+        }
+        fixTyperoom += typeRoom.charAt(i);
+    }
+    typeRoom = fixTyperoom;
+    // fix Type Room
+
+
+    do {
+        checkValidate = false;
+        rentDays = prompt("Enter Rent Days: ");
+        if (!isNaN(rentDays)) {
+            rentDays = Number.parseFloat(rentDays);
+            if (rentDays > 0 && Number.isInteger(rentDays)) {
+                checkValidate = true;
+            }
+        }
+        if (!checkValidate) {
+            alert(" Rent Days Is Valid !!!! Please Try Again");
+        }
+    } while (!checkValidate);
+    // fix Rent Days
+
+    typeService = typeService.trim().toLocaleLowerCase();
+    for (let i = 0; i < typeService.length; i++) {
+        if (typeService.charAt(i) === " " && typeService.charAt(i + 1) === " ") {
+            continue;
+        }
+        if (i === 0 || typeService.charAt(i - 1) === " ") {
+            fixTypeservice += typeService.charAt(i).toLocaleUpperCase();
+            continue;
+        }
+        fixTypeservice += typeService.charAt(i);
+    }
+    typeService = fixTypeservice;
+    // fix Type Service
+
+    alert(
+        "Information Of Customer:\n" +
+        "Name : " + nameCustomer +
+        "\nId Card : " + idCard +
+        "\nBirth Day : " + birthdayCustomer +
+        "\nEmail : " + emailCustomer +
+        "\nAddress : " + addressCustomer +
+        "\nType Customer :" + typeCustomer +
+        "\nDiscount : " + discount +
+        "\nAccompanying : " + numberOfAccompanying +
+        "\nType Room : " + typeRoom +
+        "\nRent Days : " + rentDays +
+        "\nType Sirvice : " + typeService
+    )
+    //Hiển thị thông tin
+</script>
+</body>
+</html>
