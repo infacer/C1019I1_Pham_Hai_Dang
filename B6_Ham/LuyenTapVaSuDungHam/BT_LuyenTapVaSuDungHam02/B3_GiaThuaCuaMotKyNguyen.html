@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var inputNum = parseInt(prompt("Nhập Vào 1 Số :"));
+    function giaThua(inputNum) {
+        var result = inputNum;
+        if (inputNum === 0 || inputNum === 1) {
+            return 1;
+        }
+        while (inputNum > 1) {
+            inputNum--;
+            result *= inputNum;
+        }
+        return result;
+    }
+
+    var ketQua = giaThua(inputNum);
+    alert(" Gia Thừa Của " + inputNum + " là :" + ketQua);
+
+</script>
+</body>
+</html>

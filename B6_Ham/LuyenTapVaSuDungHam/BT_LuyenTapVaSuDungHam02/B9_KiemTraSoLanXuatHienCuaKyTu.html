@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var inputKey = prompt(" Nhập 1 key bất kỳ :");
+    var arrayKey = [1, 2, 3, 5, 7, 11, 13, 17, 19, 23,1, 2, 3, 5, 7, 11, 13, 17, 19, 23];
+    var count = 0;
+    checkArray(arrayKey);
+    function checkArray(arrayKey) {
+        for (let i = 0; i < arrayKey.length; i++) {
+            if (inputKey == arrayKey[i]) {
+                count++;
+            }
+        }
+        if (count !== 0) {
+            alert(count);
+        } else {
+            alert(-1);
+        }
+
+    }
+</script>
+</body>
+</html>
