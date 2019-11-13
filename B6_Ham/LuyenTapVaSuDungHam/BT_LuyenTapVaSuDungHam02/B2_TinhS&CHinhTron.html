@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var inputWidth = parseInt(prompt(" Input Width : "));
+    // var circleArea = inputWidth * inputWidth * 3.14;
+    // var diameterOfacircle = 2 * inputWidth * 3.14;
+    // alert(" Diameter Of A Circle Is : " + diameterOfacircle + "\n Circle Area Is : " + circleArea );
+    function circleArea(inputWidth) {
+        return inputWidth * inputWidth * 3.14;
+    }
+
+    function diameterOfacircle(inputWidth) {
+        return 2 * inputWidth * 3.14;
+    }
+
+    alert(" Circle Area Is : " + circleArea(inputWidth) +
+        "\n Diameter Of A Circle Is : " + diameterOfacircle(inputWidth));
+
+</script>
+</body>
+</html>

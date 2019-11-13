@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    Enter The Name A Star : <br>
+    <input id="enterAstar">
+    <input type="button" value="Search" onclick="search()">
+    <p id="result"></p>
+</form>
+<script>
+    let inputAstar = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+    let inputConstellation = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+
+    function search() {
+        let key = document.getElementById("enterAstar");
+        let indexStar = inputAstar.indexOf(key.value);
+        let indexConst = inputConstellation.indexOf(key.value);
+        let result = document.getElementById("result");
+        if (indexConst !== -1) {
+            result.innerText = inputAstar[indexConst];
+        }
+        if (indexStar !== -1) {
+            result.innerText = inputConstellation[indexStar];
+        } else {
+            alert(" Not Found ");
+        }
+
+    }
+</script>
+</body>
+</html>

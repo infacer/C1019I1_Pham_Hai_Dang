@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="ketQua"></p>
+<form>
+    Input Number :
+    <input id="inputNumber">
+    From Type :
+    <select id="fromType">
+        <option value="1">Feet</option>
+        <option value="2">Meters</option>
+    </select>
+    To Type :
+    <select id="toType">
+        <option value="2">Meters</option>
+        <option value="1">Feet</option>
+    </select>
+    <button onclick="hienthi();return false;">Convert</button>
+</form>
+<script>
+    function hienthi() {
+        var number = document.getElementById("inputNumber").value;
+        var from = document.getElementById("fromType");
+        var to = document.getElementById("toType");
+        var ketqua = document.getElementById("ketQua");
+        if (from.value == 1 && to.value == 2) {
+            ketqua.innerText = " Convert is " + number * 0.305;
+        }
+        if (from.value == 2 && to.value == 1) {
+            ketqua.innerText = " Convert is " + number * 3.279;
+        }
+    }
+
+</script>
+</body>
+</html>
