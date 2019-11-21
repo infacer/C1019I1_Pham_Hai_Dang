@@ -46,3 +46,42 @@ let Human = function () {
         return this.weight;
     };
 };
+let Human = function () {
+    this.name = "";
+    this.gender = true;
+    this.weight = 0;
+
+    this.isMale = function () {
+        return this.gender;
+    };
+    this.setGender = function (gender) {
+        this.gender = gender;
+    };
+    this.checkApple = function (apple) {
+        return apple.weight > 0;
+    }
+    this.eat = function (apple) {
+        if(this.checkApple(apple)){
+            this.weight++;
+            apple.decrease();
+        }
+
+    };
+    this.say = function (say) {
+        console.log(say);
+    };
+    this.getName = function () {
+        return this.name
+    };
+    this.setName = function (name) {
+        this.name = name;
+        return this.name;
+    };
+    this.setWeight = function (weight) {
+        this.weight = weight;
+        return this.weight
+    };
+    this.getWeight = function () {
+        return this.weight;
+    }
+};
